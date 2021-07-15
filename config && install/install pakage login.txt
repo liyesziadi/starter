@@ -1,0 +1,10 @@
+1- composer require laravel/ui:^2.4
+
+2)creat route method auth .....
+
+  2- php artisan ui vue --auth 
+
+3)manage all pakage in one place for vue
+  3.1- copy nodejs in C:\Program Files add in variable envirenement "path:C:\Program Files\nodejs "
+  3.2- npm install && npm run dev
+  3.3- php artisan ui --auth  // put login.blade.php,register.blade.php,verify.blade.php in their place
