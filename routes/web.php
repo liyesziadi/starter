@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,8 +33,17 @@ Route::namespace('landing')->group(function(){
     $data2=[];
     return view('welcome',compact('data','data2'))->with(['id'=>3,'name'=>'liyes']);
 });
-Auth::routes();
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index')->name('home');
 
+
+
+
+Route::group(['prefix'=>'offers'],function(){
+    Route::get('getoffers', 'Offers\OfferController@getoffers');
+    Route::get('createoffer', 'Offers\OfferController@createoffer');
+    Route::post('store', 'Offers\OfferController@store')->name('offers.store');
+    });
+Auth::routes();
